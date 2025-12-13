@@ -5,7 +5,7 @@ filetype plugin on
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
 " Press i to enter insert mode, and ii to exit insert mode.
-:inoremap ii <Esc>
+" :inoremap ii <Esc>
 ]])
 
 vim.o.number = true -- Enable line numbers
