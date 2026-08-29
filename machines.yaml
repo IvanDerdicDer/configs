@@ -2,5 +2,7 @@ machines:
   iderdicpc:
     - repo: editorconfig/.editorconfig
       dest: ~/.editorconfig
-    - repo: nvim/init.lua
-      dest: ~/.config/nvim/init.lua
+    - repo: nvim/
+      dest: ~/.config/nvim/
+    - repo: fish/
+      dest: ~/.config/fish/
