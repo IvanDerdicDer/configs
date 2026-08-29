@@ -20,13 +20,56 @@ vim.o.termguicolors = true -- Enable 24-bit RGB colors
 vim.o.wildmode = 'longest,full' 
 vim.o.cc = '120'
 vim.o.clipboard = 'unnamedplus'
+vim.o.spell = true
 
 vim.pack.add{
   { src = 'https://github.com/neovim/nvim-lspconfig' },
 }
 
-vim.lsp.enable('rust-analyser')
-vim.lsp.enable('basedpyright')
+vim.lsp.config('rust_analyzer', {
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = true;
+      },
+      inlayHints = {
+        parameterHints = { enable = true },
+        typeHints = { enable = true }
+      }
+    }
+  }
+})
+vim.lsp.enable('rust_analyzer')
+vim.lsp.config('texlab', {
+    settings = {
+        texlab = {
+          build = {
+            executable = 'tectonic',
+            args = {
+                '-X',
+                'compile',
+                '%f',
+                '--synctex',
+                '--keep-logs',
+                '--keep-intermediates',
+            },
+            onSave = true,
+            forwardSearchAfter = false,
+          },
+          forwardSearch = {
+            executable = 'okular',
+            args = { '--unique', 'file:%p#src:%l%f' },
+          },
+          chktex = {
+            onOpenAndSave = true,
+            onEdit = true,
+          },
+	    },
+    },
+})
+vim.lsp.enable('texlab')
+vim.lsp.enable('ltex')
+vim.lsp.enable('mojo')
 
 vim.diagnostic.config({
   virtual_text = false,
@@ -36,3 +79,16 @@ vim.diagnostic.config({
   severity_sort = false,
   float = true,
 })
+
+vim.g.mapleader = ' '
+
+vim.keymap.set(
+    {'n', 'v'},
+	'<leader>l',
+	function()
+		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	end,
+	{
+		desc = 'Toggle inlay hints'
+	}
+)
