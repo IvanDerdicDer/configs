@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "nvim-lspconfig": {
+      "rev": "702f69fb167e9119f14adc4dfd4fcadf4d1b07a0",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "texlab": {
+      "rev": "ef2cbb703cb924d75e2df247c66939ccf8acc0f0",
+      "src": "https://github.com/latex-lsp/texlab"
+    }
+  }
+}
