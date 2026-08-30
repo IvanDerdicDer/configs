@@ -6,3 +6,5 @@ machines:
       dest: ~/.config/nvim/
     - repo: fish/
       dest: ~/.config/fish/
+    - repo: alacritty/
+      dest: ~/.config/alacritty/
