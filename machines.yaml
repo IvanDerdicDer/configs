@@ -8,3 +8,5 @@ machines:
       dest: ~/.config/fish/
     - repo: alacritty/
       dest: ~/.config/alacritty/
+    - repo: tmux/tmux.conf
+      dest: ~/.tmux.conf
