@@ -10,3 +10,12 @@ machines:
       dest: ~/.config/alacritty/
     - repo: tmux/tmux.conf
       dest: ~/.tmux.conf
+  AT-NB-PF6BJAXM:
+    - repo: editorconfig/.editorconfig
+      dest: ~/.editorconfig
+    - repo: nvim/
+      dest: ~/.config/nvim/
+    - repo: fish/
+      dest: ~/.config/fish/
+    - repo: tmux/tmux.conf
+      dest: ~/.tmux.conf
